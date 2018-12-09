@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-12">
             <div class="pb-2 mt-4 mb-2 border-bottom">
                 <h1>
                     Busqueda de usuarios
@@ -37,27 +37,29 @@
                     {{ Form::close() }}
                 </h1>
             </div>
-            <div class="col-4 offset-3">
-                <table class="table table-hover mt-4">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Bio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->bio }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        </div>
+        <div class="col">
+            <table class="table table-hover mt-4">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Bio</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->bio }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            <div class="float-right">
                 {{ $users->render() }}
             </div>
         </div>
