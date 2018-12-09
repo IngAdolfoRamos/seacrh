@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'UserController@index')->name('users');
+
+Route::get('/live', 'UserController@live')->name('live');
